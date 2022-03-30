@@ -2,7 +2,7 @@ import { AzureFunction, Context } from "@azure/functions";
 import { ConversationBot } from "@microsoft/teamsfx";
 import fetch from "node-fetch";
 import { buildAdaptiveCard } from "./adaptiveCard";
-import notificationTemplate from "./adaptiveCards/notification-default.json";
+import avalancheForecastCard from "./adaptiveCards/avalanche-forecast-card.json";
 
 // Time trigger to send notification. You can change the schedule in ../timerNotifyTrigger/function.json
 const timerTrigger: AzureFunction = async function (context: Context, myTimer: any): Promise<void> {
@@ -18,7 +18,7 @@ const timerTrigger: AzureFunction = async function (context: Context, myTimer: a
           danger: `Forecast for ${timeStamp} is rated ${forecast.Danger}`,
           rose: forecast.Rose
         };
-      }, notificationTemplate)
+      }, avalancheForecastCard)
     );
   }
 };

@@ -1,1 +1,0 @@
-# teams-avalanche-notification-bot
